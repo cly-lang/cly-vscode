@@ -1,19 +1,19 @@
 {
-  "name": "iris-language",
-  "displayName": "Iris Language",
-  "description": "Syntax highlighting for the Iris scripting language",
+  "name": "cly-lang",
+  "displayName": "Cly Language",
+  "description": "Syntax highlighting for the Cly language",
   "version": "0.0.1",
-  "publisher": "luna",
+  "publisher": "cly-lang",
   "main": "./extension.js",
   "repository": {
     "type": "git",
-    "url": "https://github.com/luna-tui/iris.git"
+    "url": "https://github.com/cly-lang/cly.h.git"
   },
   "engines": {
     "vscode": "^1.50.0"
   },
   "activationEvents": [
-    "onLanguage:iris"
+    "onLanguage:cly"
   ],
   "categories": [
     "Programming Languages"
@@ -21,22 +21,22 @@
   "contributes": {
     "languages": [
       {
-        "id": "iris",
+        "id": "cly",
         "aliases": [
-          "Iris",
-          "iris"
+          "Cly",
+          "cly"
         ],
         "extensions": [
-          ".iris"
+          ".cly"
         ],
         "configuration": "./language-configuration.json"
       }
     ],
     "grammars": [
       {
-        "language": "iris",
-        "scopeName": "source.iris",
-        "path": "./syntaxes/iris.tmLanguage.json"
+        "language": "cly",
+        "scopeName": "source.cly",
+        "path": "./syntaxes/cly.tmLanguage.json"
       }
     ]
   },
