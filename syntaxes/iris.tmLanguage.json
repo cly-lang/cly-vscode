@@ -1,0 +1,119 @@
+{
+  "$schema": "https://raw.githubusercontent.com/martinring/tmlanguage/master/tmlanguage.json",
+  "name": "Iris",
+  "patterns": [
+    { "include": "#comments" },
+    { "include": "#keywords" },
+    { "include": "#strings" },
+    { "include": "#numbers" },
+    { "include": "#builtins" },
+    { "include": "#operators" },
+    { "include": "#support" }
+  ],
+  "repository": {
+    "comments": {
+      "patterns": [
+        {
+          "name": "comment.line.double-slash.iris",
+          "match": "//.*$"
+        }
+      ]
+    },
+    "keywords": {
+      "patterns": [
+        {
+          "name": "keyword.control.iris",
+          "match": "\\b(if|else|for|in|while|break|continue|return)\\b"
+        },
+        {
+          "name": "keyword.declaration.iris",
+          "match": "\\b(struct|function|const|mut)\\b"
+        },
+        {
+          "name": "constant.language.iris",
+          "match": "\\b(true|false|null)\\b"
+        }
+      ]
+    },
+    "strings": {
+      "patterns": [
+        {
+          "name": "string.quoted.double.iris",
+          "begin": "\"",
+          "end": "\"",
+          "patterns": [
+            {
+              "name": "constant.character.escape.iris",
+              "match": "\\\\."
+            },
+            {
+              "name": "meta.embedded.expression.iris",
+              "begin": "\\{",
+              "end": "\\}",
+              "patterns": [{ "include": "#expressions" }]
+            }
+          ]
+        }
+      ]
+    },
+    "numbers": {
+      "patterns": [
+        {
+          "name": "constant.numeric.float.iris",
+          "match": "\\b\\d+\\.\\d+([eE][+-]?\\d+)?\\b"
+        },
+        {
+          "name": "constant.numeric.integer.iris",
+          "match": "\\b\\d+\\b"
+        }
+      ]
+    },
+    "builtins": {
+      "patterns": [
+        {
+          "name": "support.function.luna.iris",
+          "match": "\\bluna_v1_[a-zA-Z_][a-zA-Z0-9_]*\\b"
+        },
+        {
+          "name": "entity.name.function.iris",
+          "match": "\\b[a-zA-Z_][a-zA-Z0-9_]*(?=\\s*\\()"
+        }
+      ]
+    },
+    "operators": {
+      "patterns": [
+        {
+          "name": "keyword.operator.iris",
+          "match": "(\\+|-|\\*|/|%|==|!=|<=|>=|<|>|&&|\\|\\||!|=|\\+=|-=|\\*=|/=)"
+        },
+        {
+          "name": "punctuation.separator.iris",
+          "match": "[,;:\\.]"
+        },
+        {
+          "name": "punctuation.bracket.iris",
+          "match": "[\\(\\)\\[\\]\\{\\}]"
+        }
+      ]
+    },
+    "support": {
+      "patterns": [
+        {
+          "name": "variable.parameter.iris",
+          "match": "\\b(dt|time|row|col)\\b"
+        }
+      ]
+    },
+    "expressions": {
+      "patterns": [
+        { "include": "#keywords" },
+        { "include": "#numbers" },
+        { "include": "#strings" },
+        { "include": "#builtins" },
+        { "include": "#operators" },
+        { "include": "#support" }
+      ]
+    }
+  },
+  "scopeName": "source.iris"
+}

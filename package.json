@@ -1,0 +1,45 @@
+{
+  "name": "iris-language",
+  "displayName": "Iris Language",
+  "description": "Syntax highlighting for the Iris scripting language",
+  "version": "0.0.1",
+  "publisher": "luna",
+  "main": "./extension.js",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/luna-tui/iris.git"
+  },
+  "engines": {
+    "vscode": "^1.50.0"
+  },
+  "activationEvents": [
+    "onLanguage:iris"
+  ],
+  "categories": [
+    "Programming Languages"
+  ],
+  "contributes": {
+    "languages": [
+      {
+        "id": "iris",
+        "aliases": [
+          "Iris",
+          "iris"
+        ],
+        "extensions": [
+          ".iris"
+        ],
+        "configuration": "./language-configuration.json"
+      }
+    ],
+    "grammars": [
+      {
+        "language": "iris",
+        "scopeName": "source.iris",
+        "path": "./syntaxes/iris.tmLanguage.json"
+      }
+    ]
+  },
+  "author": "Luna Development",
+  "license": "MIT"
+}
