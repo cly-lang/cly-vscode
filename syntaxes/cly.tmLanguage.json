@@ -26,8 +26,15 @@
           "match": "\\b(if|else|for|in|while|break|continue|return)\\b"
         },
         {
-          "name": "keyword.declaration.cly",
-          "match": "\\b(struct|function|const|mut)\\b"
+          "match": "\\b(struct)\\s+([a-zA-Z_][a-zA-Z0-9_]*)",
+          "captures": {
+            "1": { "name": "storage.type.cly" },
+            "2": { "name": "entity.name.type.cly" }
+          }
+        },
+        {
+          "name": "storage.type.cly",
+          "match": "\\b(function|const|mut)\\b"
         },
         {
           "name": "constant.language.cly",

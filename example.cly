@@ -1,0 +1,25 @@
+// Copyright (C) 2026 Ethan Alexander
+// SPDX-License-Identifier: GPL-3.0-only
+
+struct MyConfig {
+    example,
+    tags,
+}
+
+function getCompilerName() {
+    return "cly";
+}
+
+function defineConfig() {
+    const compilerName = getCompilerName();
+
+    return {
+        name: compilerName,
+        version: "0.1.0",
+        debug: false,
+        max_connections: 256,
+        tags: ["fast", "lightweight", "embeddable"]
+    };
+}
+
+return defineConfig;
